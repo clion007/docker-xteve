@@ -1,4 +1,4 @@
-name: Jellyfin Docker Image Publish
+name: Xteve Docker Image Publish
 
 on:
   workflow_dispatch:
