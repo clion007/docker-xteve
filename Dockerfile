@@ -51,5 +51,5 @@ RUN set -ex; \
 EXPOSE 80
 
 # entrypoint set in clion007/alpine base image
-CMD ["-p=80"]
+CMD ["-p=80","-config=/config"]
     
