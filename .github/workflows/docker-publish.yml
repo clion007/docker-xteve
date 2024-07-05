@@ -5,7 +5,7 @@ on:
   repository_dispatch:
 
 jobs:
-  publish:
+  Xteve docker image publish:
     runs-on: ubuntu-latest
 
     steps:
