@@ -36,10 +36,6 @@ RUN set -ex; \
   useradd -u 100 -s /bin/nologin -M -g 101 xteve; \
   chown xteve:xteve /usr/bin/xteve; \
   \
-  # make dir for config and data
-  mkdir -p /config; \
-  chown xteve:xteve /config; \
-  \
   apk del --no-network .user-deps; \
   rm -rf \
       /var/cache/apk/* \
