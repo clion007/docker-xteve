@@ -5,6 +5,9 @@ set -e
 mkdir -p /config \
 	 /tmp/xteve \
 ;
+chown -R xteve:xteve /config \
+	/tmp/xteve \
+;
 
 # permissions
 chmod -R 777 /config
