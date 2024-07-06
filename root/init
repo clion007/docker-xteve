@@ -1,6 +1,16 @@
 #!/bin/sh
 set -e
 
+# make dir for config
+mkdir -p /config \
+	 /root/.xteve \
+	 /tmp/xteve \
+;
+  chown xteve:xteve /config \
+	 /root/.xteve \
+	 /tmp/xteve \
+;
+
 # permissions
 chmod -R 777 /config
 
