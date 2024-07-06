@@ -16,8 +16,8 @@ jobs:
     - name: Get latest version of xteve
       id: getVersion
       run: |
-        version=$(wget -qO- -t1 -T2 https://api.github.com/repos/xteve-project/xTeVe/releases/latest | grep '"name"' | awk -F "\"" '{printf $4}')
-        echo "curentVersion = $version" >> $GITHUB_OUTPUT
+        VERSION=$(wget -qO- -t1 -T2 https://api.github.com/repos/xteve-project/xTeVe/releases/latest | grep '"name"' | awk -F "\"" '{printf $4}')
+        echo "curentVersion=$VERSION" >> $GITHUB_OUTPUT
 
     - name: Compare xteve version
       id: cacheVersion
