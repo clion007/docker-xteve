@@ -21,6 +21,8 @@ if [[ ! "$1" || "${1#-}" != "$1" ]]; then
 	set -- xteve "$@"
 fi
 
+echo "$@"
+
 if  [ "$1" = 'xteve' ]; then
 	if [ -f "$XTEVE_FILE" ]; then
 		set -- "$@" "$(sed -n '1p' $XTEVE_FILE)"
@@ -32,9 +34,11 @@ if  [ "$1" = 'xteve' ]; then
 	### restart docker, xteve will run with given parameter
 	### no xteve.txt it ll start default values -port=34400 -config=/root/.xteve/" > /config/sample_xteve.conf
 		su-exec xteve echo "-port=80 -config=/config/" > $XTEVE_FILE
-		set -- "$@" "-port=80 -config=/config/"
+		set -- "$@" -port=80 -config=/config/
 	fi
 fi
+
+echo "$@"
 
 # allow the container to be started with `--user`
 if [ "$1" = 'xteve' -a "$(id -u)" = '0' ]; then
