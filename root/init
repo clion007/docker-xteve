@@ -3,11 +3,10 @@ set -e
 
 # make dir for config
 mkdir -p /config \
-	 /tmp/xteve \
-;
+	 /tmp/xteve
+
 chown -R xteve:xteve /config \
-	/tmp/xteve \
-;
+	/tmp/xteve
 
 # permissions
 chmod -R 777 /config
