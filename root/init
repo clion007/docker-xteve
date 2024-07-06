@@ -10,7 +10,7 @@ mkdir -p /config \
 ;
 
 # permissions
-su-exec root chmod -R 777 /config
+su-exec xteve chmod -R 777 /config
 
 XTEVE_FILE=/config/xteve.conf
 
