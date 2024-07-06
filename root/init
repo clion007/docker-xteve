@@ -38,7 +38,7 @@ fi
 
 # allow the container to be started with `--user`
 if [ "$1" = 'xteve' -a "$(id -u)" = '0' ]; then
-    exec su-exec xteve "$0" "$@"
+    exec su-exec xteve "$@"
 fi
 
 exec "$@"
