@@ -15,7 +15,7 @@ chmod -R 777 /config
 XTEVE_FILE=/config/xteve.conf
 
 # first arg is `--some-option`
-if [[ ! $1 || "${1#-}" != "$1" ]]; then
+if [[ ! "$1" || "${1#-}" != "$1" ]]; then
 	set -- xteve "$@"
 fi
 
