@@ -38,7 +38,7 @@ Get more help in settings, you can read the documents of [Xteve Offical](https:/
 Containers are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate <external>:<internal> respectively. For example, -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080 outside the container.
 
 * ```--net='vnet'``` for network - Virtual network card on your host for docker.
-* ```--ip='10.*.*.*'``` for IP address of container - Virtual individul IP address in your local network.
+* ```--ip='10.*.*.*'``` for IP address of container -Iindividul IP address in your local network.
 * ```-p 34400``` Optional - Http webUI (you need to set up your own certificate), not need by default.
 * ```-e PUID=99``` for UserID - see below for explanation.
 * ```-e PUID=100``` for GroupID - see below for explanation.
