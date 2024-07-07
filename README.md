@@ -12,7 +12,8 @@ M3U Proxy for Plex DVR and Emby Live TV, it is also could be useed for jellyfin,
 * Container xteve programe runs not by root user, more security;
 * You can set your port and config path in config file like sample config file;
 * Support config file localization, you don't need setting it everytime on run;
-* Default local time zone is Asia/Shanghai.
+* Default local time zone is Asia/Shanghai;
+* Automaticly check and update when there is updated on offical site.
 
 ## Usage
 To help you get started creating a container from this image you can use the docker cli.
