@@ -21,6 +21,8 @@ To help you get started creating a container from this image you can use the doc
 ```
 docker run -d \
   --name=Xteve \
+  --net='vnet' \
+  --ip='10.*.*.*' \
   -e 'UMASK'='022' \
   -e PUID=1000 \
   -e PGID=1000 \
