@@ -8,7 +8,7 @@ M3U Proxy for Plex DVR and Emby Live TV, it is also could be useed for jellyfin,
 * You will get fastest deploy experience, especially for chinese, with respository both on aliyun and dockerhub;
 * No support any buffer on xteve, then you will get faster play speed on change channel(I think that is player's and mediaserver's work for decode medias);
 * Support 80 port by default, so you can use without port in m3u and xmltv url for your jellyfin, player or apps;
-* For runs on 80 port, you need set a individul ip address for your container(macvlan or ipvlan);
+* For runs on 80 port, you need set a dedicated ip address for your container(macvlan or ipvlan);
 * Container xteve programe runs not by root user, more security;
 * You can set your port and config path in config file like sample config file;
 * Support config file localization, you don't need setting it everytime on run;
@@ -38,7 +38,7 @@ Get more help in settings, you can read the documents of [Xteve Offical](https:/
 Containers are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate <external>:<internal> respectively. For example, -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080 outside the container.
 
 * ```--net='vnet'``` for network - Virtual network card on your host for docker.
-* ```--ip='10.*.*.*'``` for IP address of container -Iindividul IP address in your local network.
+* ```--ip='10.*.*.*'``` for IP address of container -Dedicated IP address in your local network.
 * ```-p 34400``` Optional - Http webUI (you need to set up your own certificate), not need by default.
 * ```-e PUID=99``` for UserID - see below for explanation.
 * ```-e PUID=100``` for GroupID - see below for explanation.
