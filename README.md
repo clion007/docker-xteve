@@ -11,7 +11,7 @@ M3U Proxy for Plex DVR and Emby Live TV, it is also could be useed for jellyfin,
 * For runs on 80 port, you need set a dedicated ip address for your container(macvlan or ipvlan);
 * Container xteve programe runs not by root user, more security;
 * You can set your port and config path in config file like sample config file;
-* Support config file localization, you don't need setting it everytime on run;
+* Support config file Persistent, you don't need setting it everytime on run;
 * Default local time zone is Asia/Shanghai;
 * Automaticly check and update when there is updated on offical site, keep the image always in newest version.
 
@@ -44,7 +44,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 * ```-e PUID=99``` for UserID - see below for explanation.
 * ```-e PUID=100``` for GroupID - see below for explanation.
 * ```-e UMASK=022``` for UMASK - see below for explanation.
-* ```-v /config``` Jellyfin data storage location. This can grow very large, 50gb+ is likely for a large collection.
+* ```-v /config``` Persistent config files storage location. 
 
 ## Umask for running applications
 For all of my images I provide the ability to override the default umask settings for services started within the containers using the optional -e UMASK=022 setting. Keep in mind umask is not chmod it subtracts from permissions based on it's value it does not add.
