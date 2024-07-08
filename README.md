@@ -1,7 +1,7 @@
 # Xteve Docker Project
 
 ## What is Xteve?
-Xteve is a m3u proxy server for Plex DVR and Emby Live TV, it is also could be useed for jellyfin, kodi, potplayer and other software which is support m3u stream player on pc or Apps on mobiole and smart TV. 
+Xteve is a m3u proxy server for Plex DVR and Emby Live TV, it is also could be used for jellyfin, kodi, potplayer and other software which is support m3u stream player on pc or Apps on mobiole and smart TV. 
 
 This docker project is based on [xteve-project](https://github.com/xteve-project/xTeVe) without ffmpeg and vlc player, with only 8M size from my base alpine linux image.
 
