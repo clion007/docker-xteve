@@ -31,6 +31,7 @@ docker run -d \
   -e PGID=1000 \
   -p 34400:34400 `#optional` \
   -v /path/to/config:/config \
+  -v /etc/localtime:/etc/localtime:ro \
   --restart unless-stopped \
   registry.cn-chengdu.aliyuncs.com/clion/xteve
 ```
