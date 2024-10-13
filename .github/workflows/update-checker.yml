@@ -5,7 +5,7 @@ name: Xteve Update Checker
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 18 * * *
+    - cron: 8 18 * * *
 
 jobs:
   Xteve_Check:
