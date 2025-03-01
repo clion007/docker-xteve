@@ -15,7 +15,7 @@ ADD https://github.com/xteve-project/xTeVe-Downloads/raw/master/xteve_linux_amd6
 COPY root/ /
 
 RUN set -ex; \
-    chmod 777 /init; \
+    chmod 755 /init; \
     # unzip xteve to bin path
     unzip ../xteve.zip -d /usr/bin/; \
     chmod +x /usr/bin/xteve; \
