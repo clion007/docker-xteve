@@ -12,9 +12,10 @@ WORKDIR /tmp/xteve
 ADD https://github.com/xteve-project/xTeVe-Downloads/raw/master/xteve_linux_amd64.zip ../xteve.zip
   
 # add local files
-COPY --chmod=755 root/ /
+COPY root/ /
 
 RUN set -ex; \
+    chmod +x /init; \
     # unzip xteve to bin path
     unzip ../xteve.zip -d /usr/bin/; \
     chmod +x /usr/bin/xteve; \
