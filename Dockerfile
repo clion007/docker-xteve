@@ -15,7 +15,7 @@ ADD https://github.com/xteve-project/xTeVe-Downloads/raw/master/xteve_linux_amd6
 COPY root/ /
 
 RUN set -ex; \
-    chmod 755 /init; \
+    chmod +x /init; \
     # unzip xteve to bin path
     unzip ../xteve.zip -d /usr/bin/; \
     chmod +x /usr/bin/xteve; \
@@ -48,4 +48,3 @@ RUN set -ex; \
 EXPOSE 80 34400
 
 # entrypoint /init set in clion007/alpine base image
-    
