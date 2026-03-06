@@ -32,7 +32,7 @@ jobs:
         password: ${{ secrets.ALIYUN_TOKEN }}
 
     - name: Build and Push Docker images
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       with:
         file: Dockerfile
         context: .
