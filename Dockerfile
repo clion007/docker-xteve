@@ -7,9 +7,7 @@ LABEL mantainer="Clion Nihe Email: clion007@126.com"
 
 ARG BRANCH="edge"
 
-WORKDIR /tmp/xteve
-
-ADD https://github.com/xteve-project/xTeVe-Downloads/raw/master/xteve_linux_amd64.zip ../xteve.zip
+ADD https://github.com/xteve-project/xTeVe-Downloads/raw/master/xteve_linux_amd64.zip /tmp/xteve.zip
   
 # add local files
 COPY root/ /
@@ -17,27 +15,22 @@ COPY root/ /
 RUN set -ex; \
     chmod +x /init; \
     # unzip xteve to bin path
-    unzip ../xteve.zip -d /usr/bin/; \
+    unzip /tmp/xteve.zip -d /usr/bin/; \
     chmod +x /usr/bin/xteve; \
     \
     # install pakeges needed
     apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/main \
     --repository=http://dl-cdn.alpinelinux.org/alpine/$BRANCH/community \
+    shadow \
     su-exec \
     ; \
     \
-    # virtual install temporary pakges needed
-    apk add --no-cache --virtual .user-deps \
-    shadow \
-  ; \
-  \
   # set xteve process user and group
-  groupadd -g 101 xteve; \
-  useradd -u 100 -s /bin/nologin -M -g 101 xteve; \
+  groupadd -g 1000 xteve; \
+  useradd -u 1000 -s /bin/nologin -M -g 1000 xteve; \
   chown xteve:xteve /usr/bin/xteve; \
   \
-  apk del --no-network .user-deps; \
   rm -rf \
       /var/cache/apk/* \
       /var/tmp/* \
