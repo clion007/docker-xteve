@@ -1,16 +1,41 @@
 #!/bin/sh
 set -e
 
+# set default permission id
+DEFAULT_PUID=1000
+DEFAULT_PGID=1000
+
+# Read from env，use default if not set
+PUID=${PUID:-$DEFAULT_PUID}
+PGID=${PGID:-$DEFAULT_PGID}
+
+echo "Starting with PUID=$PUID, PGID=$PGID"
+
+# Change user group id：if group with PGID not exit，change xteve group gid to PGID；else，change xteve user to PGID group
+if [ ! getent group "$PGID" >/dev/null ] ; then
+    echo "Changing xteve group GID from $(getent group xteve | cut -d: -f3) to $PGID"
+    groupmod -g "$PGID" xteve
+else
+    existing_group=$(getent group "$PGID" | cut -d: -f1)
+    usermod -g "$existing_group" xteve
+fi
+
+# Change xteve user's UID
+if [ "$(id -u xteve)" != "$PUID" ]; then
+    echo "Changing xteve user UID from $(id -u xteve) to $PUID"
+    usermod -u "$PUID" -g "$PGID" xteve
+fi
+
 # make dir for config
 mkdir -p /config \
   /tmp/xteve
 
-chown -R xteve:xteve \
+chown -R "$PUID:$PGID" \
   /config \
   /tmp/xteve
 
 # permissions
-chmod -R 777 /config
+chmod -R 755 /config
 
 XTEVE_FILE=/config/xteve.conf
 
